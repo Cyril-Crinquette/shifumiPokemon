@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap%27');
+
+html, body{
+width: 100%;
+height: 100%;
+font-family: 'Joti One', cursive;
+}
+
+.grolem{
+    background-image: url(../img/076.png);
+}
+
+.roucarnage{
+    background-image: url(../img/1200px-Roucarnage-RFVF.png);
+}
+
+.mackogneur{
+    background-image: url(../img/068.png);
+}
+
+h1{
+    color: white;
+    font-size: 4em;
+    margin-top: 0.3em;
+    -webkit-text-stroke: 2.0px;
+    -webkit-text-stroke-color: red;
+}
+
+h2{
+    color: white;
+    font-size: 3em;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: red;
+}
+
+p{
+    font-size: 2em;
+    color: white;
+    -webkit-text-stroke: 1.0px;
+    -webkit-text-stroke-color: red;
+}
+
+#scoreMsg{
+    font-size: 3.0em;
+    color: white;
+    -webkit-text-stroke: 1.5px;
+    -webkit-text-stroke-color: red;  
+}
+
+body{
+    background-image: url(../img/faiblesse-et-force-type-pokemon_1024x1024.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: black;*/
+}
+
+.pokemon{
+    height: 9em;
+    margin-left: 5em;
+    margin-right: 5em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    backdrop-filter: blur(6px); 
+    border: thick double;
+    border-radius: 5%;
+    border-color: white;
+}
+
+.fight{
+    height: 16em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    backdrop-filter: blur(6px); 
+    border: thick double;
+    border-radius: 25%;
+    border-color: white;
+}
+
+.buttons{
+    padding: 3em;
+}
+
+.container{
+    margin: 3em;
+}
+
+.red{
+    border-color: red;
+}
+
+.button {
+    border: none;
+    border: 5px;
+    border-color: white;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #eeeeee;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: black;
+    padding: 15px 50px;
+    margin: 0 auto;
+    border-radius: 10%;
+}
+.button span {
+    position: relative;
+    z-index: 1;
+}
+.button:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 470%;
+    width: 140%;
+    background: red;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-transform: translateX(-100%) translateY(-25%) rotate(45deg);
+    transform: translateX(-100%) translateY(-25%) rotate(45deg);
+}
+.button:hover:after {
+    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+#randomSelectCpu{
+    height:3em;
+    border: 10px;
+    border-color: white;
+}
+
+#fight{
+    height:8em;
+}
