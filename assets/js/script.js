@@ -17,8 +17,8 @@ let roucarnage = document.querySelector('.roucarnage');
 let mackogneur = document.querySelector('.mackogneur');
 let randomSelectCpu = document.querySelector('#randomSelectCpu');
 let fight = document.querySelector('#fight');
-let fighter1 = document.querySelector('#fighter1');
-let fighter2 = document.querySelector('#fighter2');
+let fighter11 = document.querySelector('#fighter11');
+let fighter22 = document.querySelector('#fighter22');
 let scoreMsg = document.querySelector('#scoreMsg');
 let playerPts = document.querySelector('#playerPts');
 let cpuPts = document.querySelector('#cpuPts');
@@ -36,9 +36,8 @@ grolem.addEventListener('click', () => {
     grolem.classList.add('red');
     roucarnage.classList.remove('red');
     mackogneur.classList.remove('red');
-    fighter1.classList.add('grolem');
-    fighter1.classList.remove('mackogneur');
-    fighter1.classList.remove('roucarnage');
+    fighter11.src= 'assets/img/076.png';
+    fighter11.style.display ='block';
 });
 
 roucarnage.addEventListener('click', () => {
@@ -46,9 +45,8 @@ roucarnage.addEventListener('click', () => {
     roucarnage.classList.add('red');
     grolem.classList.remove('red');
     mackogneur.classList.remove('red');
-    fighter1.classList.add('roucarnage');
-    fighter1.classList.remove('mackogneur');
-    fighter1.classList.remove('grolem');
+    fighter11.src= 'assets/img/1200px-Roucarnage-RFVF.png';
+    fighter11.style.display ='block';
 });
 
 mackogneur.addEventListener('click', () => {
@@ -56,9 +54,8 @@ mackogneur.addEventListener('click', () => {
     mackogneur.classList.add('red');
     grolem.classList.remove('red');
     roucarnage.classList.remove('red');
-    fighter1.classList.add('mackogneur');
-    fighter1.classList.remove('grolem');
-    fighter1.classList.remove('roucarnage');
+    fighter11.src= 'assets/img/068.png';
+    fighter11.style.display ='block';
 });
 
 
@@ -67,17 +64,14 @@ mackogneur.addEventListener('click', () => {
 randomSelectCpu.addEventListener('click', () => {
     cpuChoice = Math.floor(Math.random()*3) + 1;
     if (cpuChoice == 1 ) {
-        fighter2.classList.add('grolem');
-        fighter2.classList.remove('mackogneur');
-        fighter2.classList.remove('roucarnage');
+        fighter22.src= 'assets/img/076.png';
+        fighter22.style.display ='block';
     } else if (cpuChoice == 2 ) { 
-        fighter2.classList.add('roucarnage');
-        fighter2.classList.remove('mackogneur');
-        fighter2.classList.remove('grolem');
+        fighter22.src= 'assets/img/1200px-Roucarnage-RFVF.png';
+        fighter22.style.display ='block';
     } else {
-        fighter2.classList.add('mackogneur');
-        fighter2.classList.remove('grolem');
-        fighter2.classList.remove('roucarnage');
+        fighter22.src= 'assets/img/068.png';
+        fighter22.style.display ='block';
     };
 });
 
@@ -86,22 +80,39 @@ randomSelectCpu.addEventListener('click', () => {
 
 fight.addEventListener('click', () => {
     if (playerChoice == cpuChoice ) {
+        modal.style.display = 'block';
         scoreMsg.innerHTML = 'Egalité';
         egality = egality ++ +1;
         console.log(egality);
     } else if (playerChoice == 1 && cpuChoice == 2 || playerChoice == 2 && cpuChoice == 3 || playerChoice == 3 && cpuChoice == 1 ) { 
+        modal.style.display = 'block';
         scoreMsg.innerHTML = 'Vous avez gagné!';
         playerPts.innerHTML = playerCount++ +1;
     } else {
+        modal.style.display = 'block';
         scoreMsg.innerHTML = 'Vous avez perdu!';
         cpuPts.innerHTML = cpuCount++ +1 ;
     };
     console.log(scoreMsg.innerHTML);
-    rate.innerHTML = pourcent(playerCount, cpuCount, egality) + ' %';
-    rate2.innerHTML = pourcent(cpuCount, playerCount, egality) + ' %';
+    rate.innerHTML = 'Joueur: ' + pourcent(playerCount, cpuCount, egality) + ' %';
+    rate2.innerHTML = 'Ordinateur: ' + pourcent(cpuCount, playerCount, egality) + ' %';
 });
 
+// Modale
 
-// Autre solution 
+    let modal = document.getElementById('myModal');
+    let btn = document.getElementById('myBtn');
+    let span = document.getElementsByClassName('close')[0];
 
-let selectedItems = document.querySelectorAll('.ShufumiItem'); 
+    btn.onclick = function() {
+    modal.style.display= 'block';     }
+
+    span.onclick = function() {
+    modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+        }
+    }

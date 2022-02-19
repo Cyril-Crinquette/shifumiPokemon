@@ -1,21 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap%27');
 
-html, body{
-width: 100%;
-height: 100%;
-font-family: 'Joti One', cursive;
-}
 
-.grolem{
-    background-image: url(../img/076.png);
-}
-
-.roucarnage{
-    background-image: url(../img/1200px-Roucarnage-RFVF.png);
-}
-
-.mackogneur{
-    background-image: url(../img/068.png);
+body{
+    background: url(../img/faiblesse-et-force-type-pokemon_1024x1024.jpg) center fixed;
+    background-repeat: no-repeat center fixed;
+    background-size: cover center fixed;
+    background-position: cover center fixed;
+    min-height: 100%;
+    font-family: 'Joti One';
+    /*background-color: black;*/
 }
 
 h1{
@@ -44,14 +37,17 @@ p{
     font-size: 3.0em;
     color: white;
     -webkit-text-stroke: 1.5px;
-    -webkit-text-stroke-color: red;  
+    -webkit-text-stroke-color: red;
 }
 
-body{
-    background-image: url(../img/faiblesse-et-force-type-pokemon_1024x1024.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    /*background-color: black;*/
+img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+#fighter11, #fighter22{
+    display: none;
 }
 
 .pokemon{
@@ -61,10 +57,16 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);
     border: thick double;
     border-radius: 5%;
     border-color: white;
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+}
+
+.pokemon:hover{
+    transform: scale(1.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
 .fight{
@@ -72,7 +74,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
-    backdrop-filter: blur(6px); 
+    backdrop-filter: blur(6px);
     border: thick double;
     border-radius: 25%;
     border-color: white;
@@ -139,4 +141,42 @@ body{
 
 #fight{
     height:8em;
+}
+
+/* Modale */
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content{
+    background-color: rgb(0,0,0);
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close{
+    color:#aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
