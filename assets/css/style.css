@@ -2,13 +2,12 @@
 
 
 body{
-    background: url(../img/faiblesse-et-force-type-pokemon_1024x1024.jpg) center fixed;
-    background-repeat: no-repeat center fixed;
-    background-size: cover center fixed;
-    background-position: cover center fixed;
+    background: url(../img/faiblesse-et-force-type-pokemon_1024x1024.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: cover;
     min-height: 100%;
     font-family: 'Joti One';
-    /*background-color: black;*/
 }
 
 h1{
